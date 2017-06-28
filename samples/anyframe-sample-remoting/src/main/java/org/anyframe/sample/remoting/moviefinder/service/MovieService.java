@@ -29,36 +29,36 @@ public interface MovieService {
 
 	Logger LOGGER = LoggerFactory.getLogger(MovieService.class.getName());
 
-	List<Movie> findMovieListAll() throws Exception;
+	public List<Movie> findMovieListAll() throws Exception;
 
-	Map<String, Movie> findMovieMapAll() throws Exception;
+	public Map<String, Movie> findMovieMapAll() throws Exception;
 
-	List<Movie> findMovieList(Country country, Category category)
+	public List<Movie> findMovieList(Country country, Category category)
 			throws Exception;
 
-	Movie findMovie(String movieId) throws Exception;
+	public Movie findMovie(String movieId) throws Exception;
 
-	void createMovie(Movie movie) throws Exception;
+	public void createMovie(Movie movie) throws Exception;
 
-	void updateMovie(Movie movie) throws Exception;
+	public void updateMovie(Movie movie) throws Exception;
 
-	void removeMovie(Movie movie) throws Exception;
+	public void removeMovie(Movie movie) throws Exception;
 
 	// ================= method for Type tests
-	int testMovieIntVal(int val);
+	public int testMovieIntVal(int val);
 
-	long testMovieLongVal(long val);
+	public long testMovieLongVal(long val);
 
-	short testMovieShortVal(short val);
+	public short testMovieShortVal(short val);
 
-	float testMovieFloatVal(float val);
+	public float testMovieFloatVal(float val);
 
-	double testMovieDoubleVal(double val);
+	public double testMovieDoubleVal(double val);
 
-	BigDecimal testMovieBigDecimalVal(BigDecimal val);
+	public BigDecimal testMovieBigDecimalVal(BigDecimal val);
 
-	boolean testMovieBooleanVal(boolean val);
+	public boolean testMovieBooleanVal(boolean val);
 
-	Character testMovieCharacterVal(Character val);
+	public Character testMovieCharacterVal(Character val);
 
 }
