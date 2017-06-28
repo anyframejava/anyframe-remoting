@@ -39,22 +39,25 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * TestCase Name : HttpInvokerSpringSupportTest <br>
  * <br>
- * [Description] : Spring에서 제공하는 기능인 Http Invoker 기반의 Movie 서비스를 구현하여 서비스의 기능을
- * 테스트할 수 있는 시나리오들을 정의한 TestCase이다. <br>
- * [Characteristic] <li>RMI와 같이 자바의 표준 직렬화 매커니즘 사용</li> <li>Hessian/Burlap과 같이
- * HTTP 기반의 Remoting 수행</li> <li>제약 사항 존재-Spring에서만 제공하는 Remoting 기술로 클라이언트와 원격
- * 서비스 모두 Spring 어플리케이션이어야 함</li> <li>서버 구현: Spring에서 제공하는
- * org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter 클래스를 이용하여
- * 손쉽게 일반 Spring Bean으로 작성된 서비스를 HttpInvoker Service로 노출, Spring MVC를 사용하여 HTTP
- * 기반 HttpInvoker 컨트롤러 설정</li> <li>클라이언트 구현: Spring에서 제공하는
- * org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean 클래스 이용</li>
- * <br>
- * [Assumption] <li>-서버 : JettyServer 사용, Spring 설정 파일 이용</li> <li>-클라이언트 :
- * RemotingSpringTestCase 사용, Spring 설정 파일 이용</li> <br>
- * [Main Flow] <li>#-1 Positive Case : List 형태로 전체 목록을 조회한다.</li> <li>#-2
- * Positive Case : Map 형태로 전체 목록을 조회한다.</li> <li>#-3 Positive Case : Movie를
- * 조회한다.</li> <li>#-4 Positive Case : 신규 Movie를 생성한다.</li> <li>#-5 Positive Case
- * : Movie 정보를 변경한다.</li> <li>#-6 Positive Case : Movie를 삭제한다.</li>
+ * [Description] : This TestCase defines scenarios to test service function by
+ * implementing Http Invoker based Movie service provided by Spring. <br>
+ * [Characteristic] <li>Java Serialization Mechanism Use along with RMI</li> <li>
+ * HTTP based Remoting Implementation</li> <li>Constraints- given that Remoting
+ * technology is only provided in Spring, both client and remote service should
+ * be Spring applications.</li> <li>
+ * org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter class
+ * provided by Spring is used to easily expose ordinary service written in
+ * Spring Bean as HttpInvoker Service and set up HTTP based HttpInvoker
+ * controller with Spring MVC</li> <li>Client Implementation : The use of
+ * org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean class
+ * provided by Spring</li> <br>
+ * [Assumption] <li>-Server : JettyServer Use, Spring Configuration file use</li>
+ * <li>-Client : RemotingSpringTestCase USe, Spring Configuration file use</li> <br>
+ * [Main Flow] <li>#-1 Positive Case : To search the whole list in the form of
+ * List</li> <li>#-2 Positive Case : To search the whole list in the form of Map
+ * </li> <li>#-3 Positive Case : To search Movie</li> <li>#-4 Positive Case : To
+ * create a new Movie</li> <li>#-5 Positive Case : To change Movie information</li>
+ * <li>#-6 Positive Case : To remove Movie</li>
  * 
  * @author SooYeon Park
  */
@@ -63,7 +66,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class HttpInvokerSpringSupportTest extends ServerRunner {
 
 	// ==============================================================
-	// ====== TestCase 수행에 필요한 사전 작업 정의 ====================
+	// ====== Pre-job Definition necessary for TestCase Execution====
 	// ==============================================================
 
 	@Inject
@@ -90,7 +93,7 @@ public class HttpInvokerSpringSupportTest extends ServerRunner {
 	// ==============================================================
 
 	/**
-	 * [Flow #-1] Positive Case : List 형태로 전체 목록을 조회한다.
+	 * [Flow #-1] Positive Case : To search the whole list in the form of List
 	 * 
 	 * @throws Exception
 	 *             throws exception which is from service
@@ -105,7 +108,7 @@ public class HttpInvokerSpringSupportTest extends ServerRunner {
 	}
 
 	/**
-	 * [Flow #-2] Positive Case : Map 형태로 전체 목록을 조회한다.
+	 * [Flow #-2] Positive Case : To search the whole list in the form of Map
 	 * 
 	 * @throws Exception
 	 *             throws exception which is from service
@@ -120,7 +123,7 @@ public class HttpInvokerSpringSupportTest extends ServerRunner {
 	}
 
 	/**
-	 * [Flow #-3] Positive Case : Movie Id가 "001"인 Movie를 조회한다.
+	 * [Flow #-3] Positive Case : To search Movie whose I.D. is “001” 
 	 * 
 	 * @throws Exception
 	 *             throws exception which is from service
@@ -136,7 +139,7 @@ public class HttpInvokerSpringSupportTest extends ServerRunner {
 	}
 
 	/**
-	 * [Flow #-4] Positive Case : Movie Id가 "003"인 신규 Movie를 생성한다.
+	 * [Flow #-4] Positive Case : To create a new “Movie” whose I.D. is “003” 
 	 * 
 	 * @throws Exception
 	 *             throws exception which is from service
@@ -160,7 +163,7 @@ public class HttpInvokerSpringSupportTest extends ServerRunner {
 	}
 
 	/**
-	 * [Flow #-5] Positive Case : Movie Id가 "002"인 기존 Movie 정보를 변경한다.
+	 * [Flow #-5] Positive Case : To change the existing Movie information whose I.D. is “002” 
 	 * 
 	 * @throws Exception
 	 *             throws exception which is from service
@@ -180,7 +183,7 @@ public class HttpInvokerSpringSupportTest extends ServerRunner {
 	}
 
 	/**
-	 * [Flow #-6] Positive Case : Movie Id가 "002"인 기존 Movie를 삭제한다.
+	 * [Flow #-6] Positive Case : To remove the existing Movie whose I.D. is “002” 
 	 * 
 	 * @throws Exception
 	 *             throws exception which is from service

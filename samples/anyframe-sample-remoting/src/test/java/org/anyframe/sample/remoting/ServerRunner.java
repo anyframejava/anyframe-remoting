@@ -21,8 +21,10 @@ import org.anyframe.sample.remoting.server.Server;
  * TestCase Name : ServerRunner <br>
  * <br>
  * 
- * [tip.] Server를 stop 시킨 후 다음 테스트 수행을 위해서 start 시키기 까지는 약간의 시간 term이 필요하므로
- * Thread.sleep(5 * 1000); 구문을 추가하였다.
+ * [tip.] After stopping Server, it takes time break to start in order to
+ * conduct the next test. Therefore, Thread.sleep(5 * 1000); statements are
+ * added.
+ * it takes time break to start
  * 
  * @author SooYeon Park
  */
