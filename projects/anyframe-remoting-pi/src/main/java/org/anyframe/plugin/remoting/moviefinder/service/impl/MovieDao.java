@@ -31,41 +31,45 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("remotingMovieDao")
 public class MovieDao extends QueryServiceDaoSupport {
+
+	//Velocity-Support-contextProperties-START
 	@Value("#{contextProperties['pageSize'] ?: 10}")
 	int pageSize;
 
 	@Value("#{contextProperties['pageUnit'] ?: 10}")
 	int pageUnit;
+	//Velocity-Support-contextProperties-END
 
 	@Inject
 	public void setQueryService(QueryService queryService) {
 		super.setQueryService(queryService);
 	}
 
-	public String create(Movie movie) throws Exception {
+	public String create(Movie movie) {
 		movie.setMovieId("MV-" + System.currentTimeMillis());
-		create("createRemotingMovie", movie);
+		super.create("createRemotingMovie", movie);
 		return movie.getMovieId();
 	}
 
-	public void remove(String movieId) throws Exception {
+	public void remove(String movieId) {
 		Movie movie = new Movie();
 		movie.setMovieId(movieId);
-		remove("removeRemotingMovie", movie);
+		super.remove("removeRemotingMovie", movie);
 	}
 
-	public void update(Movie movie) throws Exception {
-		update("updateRemotingMovie", movie);
+	public void update(Movie movie) {
+		super.update("updateRemotingMovie", movie);
 	}
 
-	public Movie get(String movieId) throws Exception {
+	public Movie get(String movieId) {
 		Movie movie = new Movie();
 		movie.setMovieId(movieId);
-		return (Movie) findByPk("findRemotingMovieByPk", movie);
+		return super.findByPk("findRemotingMovieByPk", movie);
 	}
 
-	public Page getPagingList(Movie movie, int pageIndex) throws Exception {
-		return this.findListWithPaging("findRemotingMovieList", movie, pageIndex, pageSize,
-				pageUnit);
+	public Page getPagingList(Movie movie, int pageIndex) {
+		return super.findListWithPaging("findRemotingMovieList", movie,
+				pageIndex, pageSize, pageUnit);
 	}
+
 }

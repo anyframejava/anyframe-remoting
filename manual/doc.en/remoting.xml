@@ -34,7 +34,7 @@
 			<year>2007-2011</year>
 			<holder>Samsung SDS</holder>
 		</copyright>
-		<releaseinfo>Version 1.0.3</releaseinfo>
+		<releaseinfo>Version 1.0.4</releaseinfo>
 
 		<productname>Anyframe Remoting Plugin</productname>
 
@@ -75,10 +75,8 @@
 				The installation result can be checked by using the installed (mvn anyframe:installed) or the jetty:run (mvn clean
 				jetty:run) commands. 
 			</para>
-			<para role="introduction_title">
-				<emphasis role="bold">Dependent Plugins</emphasis>
-			</para>
 			<informaltable>
+				<caption>Dependent Plugins</caption>
 				<tgroup cols="2">
 					<colspec colnum="1" colname="col1" colwidth="5*" />
 					<colspec colnum="2" colname="col2" colwidth="5*" />
@@ -92,9 +90,9 @@
 						<row>
 							<entry align="center">
 								<ulink
-									url="http://dev.anyframejava.org/docs.en/anyframe/plugin/optional/query/1.1.3/reference/htmlsingle/query.html">query</ulink>
+									url="http://dev.anyframejava.org/docs.en/anyframe/plugin/optional/query/1.5.0/reference/htmlsingle/query.html">query</ulink>
 							</entry>
-							<entry align="center" valign="middle">2.0.0 > *</entry>
+							<entry align="center" valign="middle">2.0.0 > * > 1.4.0</entry>
 						</row>
 					</tbody>
 				</tgroup>
@@ -201,9 +199,9 @@
 		            			<row>
 					              	<entry>EJB</entry>
 					
-					              	<entry>J2EE service for Remoting, application security, transaction processing, etc.</entry>
+					              	<entry>JavaEE service for Remoting, application security, transaction processing, etc.</entry>
 					
-					              	<entry>Heavyweight technology. J2EE container is essential.</entry>
+					              	<entry>Heavyweight technology. JavaEE container is essential.</entry>
 		            			</row>
 		
 		            			<row>
